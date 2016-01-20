@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]><html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="fr" class="ie8 ie"> <![endif]-->
+<!--[if IE 9]><html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="fr" class="ie9 ie"> <![endif]-->
+<!--[if gte IE 9]><html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="fr" class="ie10 ie"> <![endif]-->
+<!--[if !(IE)]><!-->
+<html itemscope itemtype="http://schema.org/WebPage" xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="fr">
+<!--<![endif]-->
+<head>
+<!--[if !IE]><!--><script>
+if (/*@cc_on!@*/false) {
+    document.documentElement.className+=' ie10';
+}
+</script><!--<![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="HandheldFriendly" content="True"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="author" content="WeDesign - Tahiti" />
+<title>LOGIS - Générateur de signatures</title>
+<link rel="shortcut icon" href="engine/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="engine/favicon.ico" type="image/x-icon" />
+<link href="engine/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="engine/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="engine/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="engine/clipboard.min.js"></script>
+</head>
+<body><div id="fond"></div><div id="modal" class="popup"></div>
+<header>
+  <div style="float:left"><img id="logo" src="engine/logo.png"/></div>
+  <h1 style="float:left; margin-left: 20px;"></h1>
+  <div class="clear"></div>
+</header>
+<main>
+    <section id="choixSociete">
+        <div id="listeSocietes">
+            <h3>Choisissez votre société</h3>
+        </div>
+    </section>
+    <section id="SaisieSociete">
+    <h3></h3>
+    <form id="formSociete">
+        <table>
+         <tr>
+         <td><label for="nom">Prénom NOM</label></td>
+         <td><input id="nom" type="text" placeholder="Prénom NOM"></td>
+         </tr>
+         <tr>
+         <td><label for="poste">Poste</label></td>
+         <td><input id="poste" type="text" placeholder="Poste, service, ..."></td>
+         </tr>
+         <tr>
+         <td><label for="tel">Téléphone</label></td>
+         <td><input id="tel" type="text" placeholder="Respectez xx.xx.xx.xx ou vide"><div id="err_tel" class="erreur">Doit respecter le format xx.xx.xx.xx</div></td>
+         </tr>
+         <tr>
+         <td><label for="cel">Portable</label></td>
+         <td><input id="cel" type="text" placeholder="Respectez xx.xx.xx.xx ou vide"><div id="err_cel" class="erreur">Doit respecter le format xx.xx.xx.xx</div></td>
+         </tr>
+         <tr>
+         <td><label for="fax">Fax</label></td>
+         <td><input id="fax" type="text" placeholder="Respectez xx.xx.xx.xx ou vide"><div id="err_fax" class="erreur">Doit respecter le format xx.xx.xx.xx</div></td>
+         </tr>
+         <tr>
+         <td><label for="email">Email</label></td>
+         <td><input id="email" type="text" placeholder="Email"><div id="err_email" class="erreur">Email invalide</div></td>
+         </tr>
+         <tr>
+         <td><label for="adresse">Adresse</label></td>
+         <td><input id="adresse" type="text" placeholder="Adresse"></td>
+         </tr>
+         
+        </table>
+        </form>  
+        <div class="clear"></div>
+        <div class="boutons">
+            <div class="bouton" id="retour">Retour à la liste</div>
+            <div class="bouton" id="visu">Visualiser</div>
+            <div class="clear"></div>
+        </div>
+        <div id="visuSociete" class="clear" >
+            <div id="copieSociete">
+            <!--DEBUT SIGNATURE-->                
+                <div id="signature">
+                <table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #D3D3D3; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:17px; color:#808080;">
+                <tr>
+                  <td align="center" valign="bottom" style="width:105px; padding:7px 10px; border-right:1px solid #D3D3D3;">
+                    <img src="engine/logo.png" width="104" height="82" id="iS"  />
+                    <br>
+                    <a id="uS" href="http://" target="_blank" style="color:#808080; text-decoration:none; font-size:11px;"></a>
+                  </td>
+                  <td align="left" valign="bottom" style="padding:7px 20px;">
+                    <strong id="nS" style="font-size:15px; line-height:15px;"></strong>
+                    <div id="pS" style="font-size:12px; margin-bottom:10px;"></div>
+                    <div id="tS"></div>
+                    <a id="eS" href="mailto:" style="color:#808080; text-decoration:none;"></a><br>
+                    <div id="aS"></div>               
+                  </td>
+                </tr>
+              </table>
+              </div>
+            <!--FIN SIGNATURE-->
+           </div>
+        <div class="boutons">
+            <div class="bouton" id="copie">Générer la signature</div>
+            <a href="aide.pdf" target="_blank">Aide à l'installation</a>
+            <div class="clear"></div>
+        </div>
+        </div>
+         
+    </section>
+</main>
+<footer>
+  <div id="wtf"></div>
+  <div id="wed">Réalisé par <a href="http://www.wedesign.pf" target="_blank">Wedesign</a></div>
+  <div class="clear"></div>
+</footer>
+<textarea id="copieSignature"></textarea>
+
+<script type="text/javascript" >
+
+function checkemail(email){
+    var reg = new RegExp('^[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*@[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*[\.]{1}[a-z]{2,6}$', 'i');
+	return(reg.test(email));
+}
+
+function checktelfax(telfax){
+    telfaxTest = telfax.replace(/[^0-9.]/g, '');
+    if(telfax==telfaxTest) {
+        return true;
+    } else {
+        return false;
+    }
+    
+}
+
+$(document).ready( function(){
+    
+    // INITIALISATION ////////////
+    
+    $.each( societes, function( keySoc, datasSoc ) {
+        //$( "#listeSocietes" ).append( "<tr><td class='societe' data-id='" + keySoc + "'>" + datasSoc.titre + "</td></tr>" );
+        $( "#listeSocietes" ).append( "<div class='bouton societe' data-id='" + keySoc + "'>" + datasSoc.titre + "</div>" );
+    });
+    
+    
+    $('#SaisieSociete').hide();
+    $('#visuSociete').hide();
+    
+    $('#err_email').hide();
+    $('#err_tel').hide();
+    $('#err_cel').hide();
+    $('#err_fax').hide();
+    
+    var idSociete=0;
+    
+    // ACTIONS ////////////
+       
+    // bouton de retour à la liste des sociétés    
+    $('#retour').click(function (e) { 
+        $('#choixSociete').slideDown(); 
+        $('#SaisieSociete').slideUp();
+	}); 
+    
+     // choix d'une société dans la liste
+    $('.societe').click(function (e) { 
+        idSociete= $(this).attr('data-id');
+        $("#imageSociete").attr('src',"images/"+societes[idSociete].image);
+        // valeurs par défaut
+        $("#SaisieSociete h3").html(societes[idSociete].titre);
+        $("#nom").val(societes[idSociete].nom);
+        $("#poste").val(societes[idSociete].poste);
+        $("#tel").val(societes[idSociete].tel);
+        $("#cel").val(societes[idSociete].cel);
+        $("#fax").val(societes[idSociete].fax);
+        $("#email").val(societes[idSociete].email);
+        $("#adresse").val(societes[idSociete].adresse);
+        //
+        $('#visuSociete').hide();
+        $('#choixSociete').slideUp(); 
+        $('#SaisieSociete').slideDown();
+	}); 
+
+    // prévisualisation d'une signature
+    $('#visu').click(function (e) { 
+        
+        if(checkemail($('#email').val())==false && $('#email').val()!="") { 
+            $('#err_email').show();   
+            return;
+        } else {  
+            $('#err_email').hide(); 
+        }
+       
+        if(checktelfax($('#tel').val())==false && $('#tel').val()!="") { 
+            $('#err_tel').show();   
+            return;
+        } else {  
+            $('#err_tel').hide(); 
+        }
+        if(checktelfax($('#cel').val())==false && $('#cel').val()!="") { 
+            $('#err_cel').show();   
+            return;
+        } else {  
+            $('#err_cel').hide(); 
+        }
+        if(checktelfax($('#fax').val())==false && $('#fax').val()!="") { 
+            $('#err_fax').show();   
+            return;
+        } else {  
+            $('#err_fax').hide(); 
+        }
+        
+        $("#iS").attr('src',siteUrl+"images/"+societes[idSociete].image);
+        $("#uS").attr('href',"http://"+societes[idSociete].url);
+        $("#uS").html(societes[idSociete].url);
+        $("#nS").html( $("#nom").val());
+        $("#nS").css( "color",societes[idSociete].couleur);
+        $("#pS").html( $("#poste").val());
+        
+        var sept="";
+        $("#tS").html("");
+        if($("#tel").val()!="") { 
+            $("#tS").append( prefixeTel + $("#tel").val());
+            sept=separateurTelFax;
+        }
+        if($("#cel").val()!="") { 
+            $("#tS").append( sept + prefixeCel + $("#cel").val());
+            sept=separateurTelFax;
+        }
+        if($("#fax").val()!="") { 
+            $("#tS").append( sept + prefixeFax + $("#fax").val());
+        }
+  
+        $("#eS").attr('href',"mailto:"+$("#email").val());
+        $("#eS").html( $("#email").val());
+        $("#aS").html( $("#adresse").val());
+        
+        $('#copie').removeClass("copySuccess");
+        $('#copie').removeClass("copyError");
+        
+        $('#visuSociete').slideDown(); 
+	}); 
+ 
+    // bouton copie
+    $('#copie').click(function (e) { 
+        
+        $("#copieSignature").val($("#copieSociete").html());
+        
+         clipboard.copy($("#copieSociete").html()).then(function(){
+            $('#copie').addClass("copySuccess");
+            //alert("Copie effectuée.");
+            window.open("signature.html");
+         }, function(err){
+            $('#copie').addClass("copyError");
+            alert("fonction Copier impossible, contacter le webmaster. Merci.");
+         });
+
+	}); 
+    
+
+ });
+
+
+function signatureHTML(){ // Utilisé depuis signature.html
+    return $("#copieSociete").html();
+}
+
+
+</script>
+</body>
+</html>

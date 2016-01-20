@@ -1,0 +1,258 @@
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+
+* {
+    box-sizing: inherit;
+}
+
+img {
+  border: 0;
+}
+
+
+body, table {
+	font-family: sans-serif;
+	font-size: 1.0em;
+	line-height: 1.0em;
+	color: #2b2e2d;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	font-weight: normal;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    vertical-align: top;
+    border-spacing: 0px;
+}
+
+td, th {
+    padding: 0.3em 0.8em;
+    border: 1px solid #e5e5e5;
+    vertical-align: top;
+    min-width: 20px;
+    cursor: default;
+    text-align: left;
+    margin-bottom: 0px;
+    line-height: 1.5;
+}
+
+
+h1 {
+  font-size: 1.2em;
+}
+
+
+.clear {
+  clear: both;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active,
+a {    
+   color:tomato;
+   text-decoration:none;   
+}
+
+a:hover {
+   color:tomato;
+   text-decoration:underline;   
+}
+
+
+
+.erreur {
+    color:tomato;  
+    font-size: 0.8em;  
+}
+
+
+header {
+
+    width:100%;
+    overflow: hidden;
+    padding:10px 15px;
+    background-color: #e5e5e5;
+}
+
+header #logo {
+    max-height:50px;   
+}
+
+footer {
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    overflow: hidden;
+    padding:10px 0px;
+    font-size: 0.7em;
+    background-color: #e5e5e5;
+}
+
+footer #wtf {
+    float:left;
+     margin-left: 20px;
+}
+
+footer #wed {
+    float:right;
+     margin-right: 20px;
+}
+
+
+main {
+   margin-top:40px;
+   text-align:center; 
+}
+
+main table {
+   width:auto;
+   margin:0 auto; 
+   transition: all 0.2s linear;
+}
+
+#copieSociete table {
+   width:auto;
+   margin:0 auto; 
+}
+
+main table td ,
+main table th {
+   padding:15px 30px;
+   vertical-align:middle;
+   transition: all 0.2s linear;
+}    
+
+.bouton {
+    margin:0px 5px;
+	padding:10px 15px;
+	width:auto;
+	display: inline;
+	font-size:0.8em;
+	text-align:center;
+	text-transform: uppercase;
+	color:#fff;
+	cursor:pointer;
+	text-decoration: none;
+    background-color:rgba(110,154,191,1);
+	-webkit-backface-visibility: hidden;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    transition: all 0.2s linear;
+}
+
+.bouton:hover {
+   background-color:rgba(44,86,122,1);
+	text-decoration: none;
+}
+
+
+#listeSocietes {
+    max-width:900px;    
+    margin:0 auto;
+}
+
+#listeSocietes .societe   {
+   float:left;
+    margin:5px 10px;
+} 
+
+
+
+#SaisieSociete {
+    margin-bottom:100px;    
+}
+
+
+.boutons {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+.copySuccess {
+     background-color:green;  
+}
+
+.copyError {
+     background-color:red;  
+}
+
+#formSociete input {  
+    font-size: 0.7em; 
+    padding:7px 10px;
+    background-color: #e5e5e5;
+    border:1px solid #e5e5e5;
+    transition: all 0.2s linear;
+    width:500px;
+}
+
+#formSociete input:focus {
+    background-color: #fff;
+    border:1px solid #7f7f7f;
+}
+
+label {
+    color: rgba(110,154,191,1);
+	font-size:0.8em;
+}
+
+#visuSociete {
+    margin-top: 40px;
+}
+
+#copieSignature {
+    position:fixed;
+    top:-10000px;   
+}
+
+@media only screen and (max-width: 600px) {
+    #formSociete input {  
+        width:300px;
+    }	
+}
+
+@media only screen and (max-width: 500px) {
+    #formSociete input {  
+        width:200px;
+    }	
+}
+
+
+
+#fond {
+   position:absolute;
+   z-index:9000;
+   background-color:#000;
+   display:none;
+   border-radius: 10px;
+}
+
+.popup {
+   position:fixed;
+   width:440px;
+   height:200px;
+   display:none;
+   z-index:9999;
+   padding:20px;
+   border-radius: 10px;
+   background-color: white;
+   border: 1px solid grey;
+}
+
+#modal {
+   width:300px;
+   height:200px;
+}
