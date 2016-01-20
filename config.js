@@ -6,9 +6,10 @@ var prefixeTel="Tél : +(689) "; // Ajouter devant les n° de téléphone
 var prefixeCel="Portable : +(689) "; // Ajouter devant les n° de portable
 var prefixeFax="Fax : +(689) "; // Ajouter devant les n° de fax
 var separateurTelFax="&nbsp;&nbsp;|&nbsp;&nbsp;"; // séparateur entre les n° de téléphone et de fax
-
+//****************************
 //****************************
 // SOCIETES
+//****************************
 //****************************
 var societes = [];
 
